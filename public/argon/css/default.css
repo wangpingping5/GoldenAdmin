@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'YES24';
+    src: url(../fonts/YES24.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body,
+html {
+    height: 100%;
+    font-family: YES24, sans-serif !important;
+    font-size : .9rem;
+}
+
+.sidebar-hr
+{
+    border-top :1px solid rgba(255,255,255,.15);
+}
+.navbar-vertical .navbar-nav .nav-link[data-toggle='collapse']:after
+{
+    color: #fff !important;
+}
+
+@media (max-width: 767.98px)
+{
+    .navbar-nav .nav-link
+    {
+        color: #fff !important;
+    }
+    .nav-padding
+    {
+        padding: 0px;
+    }
+    .noticeBar {
+        flex-direction: column;
+        align-items: normal;
+    }
+}
+
+.navbar-vertical.navbar-expand-md .navbar-nav .nav .nav-link
+{
+    padding-left: 2.25rem;
+}
+
+
+.navbar-vertical .navbar-nav .nav-link .sub-i
+{
+    min-width : 1.75rem !important;
+}
+
+.btn
+{
+    box-shadow : none !important;
+}
+
+.page-item.active .page-link
+{
+    box-shadow : none !important;
+    border-color: #6a6a6a !important;
+    background-color : #6a6a6a !important;
+}
+
+.navbar-vertical.navbar-expand-xs .navbar-nav>.nav-item>.nav-link.active
+{
+    background: #3e3e3e !important;
+}
+
+.nav>.nav-item>.nav-link.active
+{
+    color:aqua;
+}
+
+.sidenav-toggler-dark .sidenav-toggler-line
+{
+    background-color : #000000 !important;
+}
+
+.table thead th
+{
+    font-size: .9rem !important;
+}
+
+.card-header .box .box-tools .box-button[data-toggle='collapse']:after
+{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+
+    display: inline-block;
+
+    margin-left: auto;
+
+    content: '\f105';
+    transition: all .15s ease; 
+
+    color: #8898aa;
+
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+.card-header .box .box-tools .box-button[data-toggle='collapse'][aria-expanded='true']:after
+{
+    transform: rotate(90deg);
+}
+.pull-right{
+    float: right;
+}
+.loading {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    opacity: 0.6;
+    background: #e4e4e4;
+    z-index: 99;
+    text-align: center;
+}
+
+.loading > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+}
+
+hr.horizontal {
+    background-color:transparent;
+}
+
+hr.horizontal.dark {
+    background-image : linear-gradient(90deg,transparent,rgba(0,0,0,.4),transparent);
+}
+
+.card-profile-circle {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+.profile-circle {
+    width: calc(1em / 0.4);
+    height: calc(1em / 0.4);
+    margin-top: calc(-1em / 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3em;
+    color: white;
+    border: 2px solid green;
+    background-color: green;
+}
+
+.modal-header {
+    border-bottom:1px solid #e9ecef !important;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef !important;
+}
+
+.noticeBar {
+    background: #fff;
+    z-index: 999999999;
+    font-size: 16px;
+    color: #333;
+    padding: 16px 40px;
+    font-weight: 400;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 40px;
+    width: 40%;
+    min-width : 20rem !important;
+    border-radius: 8px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,0.25), 0 8px 16px -8px rgba(0,0,0,0.3), 0 -6px 16px -6px rgba(0,0,0,0.025);
+}
+.noticeBar>.content {
+    margin-top : .5rem!important;
+    padding: 8px 20px;
+}
+
+.login_bg {
+    background-image: url('/argon/img/theme/bg-login.jpg') !important;
+}
+
+/**********************************/
+.sidenav-toggler-line
+{
+    background-color : #ebebeb !important;
+}
+
+.bg-header {
+    background:linear-gradient(87deg,#212529,#212229)!important;
+}
+
+.sidenav-bg {
+    background-color:#212529!important;
+}
+
+.card-bg-2
+{
+    background:linear-gradient(87deg,#606c77,#4f5263)!important
+}
+
+.card-bg-1
+{
+    background:linear-gradient(87deg,rgb(70, 83, 112),rgb(22, 27, 36))!important
+}
