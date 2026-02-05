@@ -99,12 +99,12 @@
                         var err_users = data.err_users;
                         if(err_users.length > 0){
                             if(err_users.length == 1){
-                                confirm("["+ err_users[0] + "] " + {!!__('agent.MultiUserMsg4')!!});
+                                confirm("["+ err_users[0] + "] " + "{!!__('agent.MultiUserMsg4')!!}");
                             }else{
-                                confirm("["+ err_users.join() + "] " + {!!__('agent.MultiUserMsg5')!!});
+                                confirm("["+ err_users.join() + "] " + "{!!__('agent.MultiUserMsg5')!!}");
                             }                            
                         }else{
-                            confirm({!!__('agent.MultiUserMsg6')!!});
+                            confirm("{!!__('agent.MultiUserMsg6')!!}");
                         }
                         
                         window.opener.location.href = "{{argon_route('player.list')}}";
@@ -112,7 +112,7 @@
                     }
                 },
                 error: function (data) {
-                    alert({!!__('agent.NoCorrectData')!!});
+                    alert("{!!__('agent.NoCorrectData')!!}");
                     $('#btnSubmit').css('pointer-events', 'auto');
                 }
             });

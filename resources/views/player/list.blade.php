@@ -256,7 +256,7 @@
         if(user_ids.length == 0){
             $("#btn_active").css('pointer-events', 'auto');
             $("#btn_disable").css('pointer-events', 'auto');
-            alert({!!__('agent.NoSelectedUser')!!});
+            alert("{!!__('agent.NoSelectedUser')!!}");
             return;
         }
         $.ajax({
@@ -292,11 +292,11 @@
             user_ids.push(td.eq(1).text());
         });
         if(user_ids.length == 0){
-            alert({!!__('agent.NoSelectedUser')!!});
+            alert("{!!__('agent.NoSelectedUser')!!}");
             $("#btn_delete").css('pointer-events', 'auto');
             return;
         }
-        if(confirm({!!__('agent.DeleteSelectedUsers')!!})){
+        if(confirm("{!!__('agent.DeleteSelectedUsers')!!}")){
             $.ajax({
             url: "{{argon_route('player.delete')}}",
             type: "GET",
@@ -324,13 +324,13 @@
     function refreshPlayerBalance(userid, dealid)
     {
         if(dealid==0){
-            $('#uid_' + userid).text({!!__('agent.RequestingBalance')!!});
+            $('#uid_' + userid).text("{!!__('agent.RequestingBalance')!!}");
             $('#rfs_' + userid).css("pointer-events", "none");
             setTimeout(() => {
                     $('#rfs_' + userid).css("pointer-events", "auto"); 
                 }, 10000);
         }else{
-            $('#duid_' + userid).text({!!__('agent.RequestingRolling')!!});
+            $('#duid_' + userid).text("{!!__('agent.RequestingRolling')!!}");
             $('#drfs_' + userid).css("pointer-events", "none");
             setTimeout(() => {
                     $('#drfs_' + userid).css("pointer-events", "auto"); 

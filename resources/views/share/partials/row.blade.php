@@ -4,7 +4,7 @@
 </td>
 
 <td>{{number_format($user->balance)}}</td>
-<td>{{ number_format($user->deal_balance - $user->mileage,0) }}</td>
+<td>{{ number_format($user->deal_balance - $user->mileage, 2) }}</td>
 <td>
     @if (count($user->sharebetinfo) > 0)
         @foreach ($user->sharebetinfo as $info)

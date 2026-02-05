@@ -1040,13 +1040,13 @@ namespace App\Http\Controllers\Backend
                 return response()->json(['error'=>true, 'msg'=> trans('Could not find user')]);
             }
             if($dealid > 0){
-                return response()->json(['error'=>false, 'balance'=> number_format($user->deal_balance - $user->mileage)]);
+                return response()->json(['error'=>false, 'balance'=> number_format($user->deal_balance - $user->mileage, 2)]);
             }
             //게임사 연동 위해 대기중이면 머니동기화 하지 않기
             $launchRequests = \App\Models\GameLaunch::where('finished', 0)->where('user_id', $user->id)->get();
             if (count($launchRequests) > 0)
             {
-                return response()->json(['error'=>false, 'balance'=> number_format($user->balance)]);
+                return response()->json(['error'=>false, 'balance'=> number_format($user->balance, 2)]);
             }
             $balance = \App\Models\User::syncBalance($user, 'playerrefresh');
             if ($balance < 0)
@@ -1055,7 +1055,7 @@ namespace App\Http\Controllers\Backend
             }
             else
             {
-                return response()->json(['error'=>false, 'balance'=> number_format($balance)]);
+                return response()->json(['error'=>false, 'balance'=> number_format($balance, 2)]);
             }        
         }
         public function checkId(\Illuminate\Http\Request $request)

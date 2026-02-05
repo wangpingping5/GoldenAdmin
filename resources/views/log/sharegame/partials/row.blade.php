@@ -56,15 +56,15 @@
         <tbody>
             <tr>
                 <td class="text-start"><span  class="btn btn-primary px-2 py-1 mb-1 rounded-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;총배팅금&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-                <td class="text-end w-80">{{ number_format($stat->bet,0)}}</td>
+                <td class="text-end w-80">{{ number_format($stat->bet, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-danger px-2 py-1 mb-1 rounded-0">파트너배팅금</span></td>
-                <td class="text-end w-80">{{ number_format($stat->betlimit,0)}}</td>
+                <td class="text-end w-80">{{ number_format($stat->betlimit, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-success px-2 py-1 mb-0 rounded-0">받치기배팅금</span></td>
-                <td class="text-end w-80">{{ number_format($stat->bet - $stat->betlimit,0)}}</td>
+                <td class="text-end w-80">{{ number_format($stat->bet - $stat->betlimit, 2)}}</td>
             </tr>
         </tbody>
     </table>
@@ -74,15 +74,15 @@
         <tbody>
             <tr>
                 <td class="text-start"><span  class="btn btn-primary px-2 py-1 mb-1 rounded-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;총당첨금&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-                <td class="text-end w-80">{{ number_format($stat->win,0)}}</td>
+                <td class="text-end w-80">{{ number_format($stat->win, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-danger px-2 py-1 mb-1 rounded-0">파트너당첨금</span></td>
-                <td class="text-end w-80">{{ number_format($stat->winlimit,0)}}</td>
+                <td class="text-end w-80">{{ number_format($stat->winlimit, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-success px-2 py-1 mb-0 rounded-0">받치기당첨금</span></td>
-                <td class="text-end w-80">{{ number_format($stat->win - $stat->winlimit,0)}}</td>
+                <td class="text-end w-80">{{ number_format($stat->win - $stat->winlimit, 2)}}</td>
             </tr>
         </tbody>
     </table>
@@ -93,15 +93,15 @@
         <tbody>
             <tr>
                 <td class="text-start"><span  class="btn btn-primary px-2 py-1 mb-1 rounded-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;총롤링금&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
-                <td class="text-end w-80">{{ number_format(($stat->bet * $stat->deal_percent) / 100,0)}}</td>
+                <td class="text-end w-80">{{ number_format(($stat->bet * $stat->deal_percent) / 100, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-danger px-2 py-1 mb-1 rounded-0">파트너롤링금</span></td>
-                <td class="text-end w-80">{{ number_format($stat->deal_limit,0)}}</td>
+                <td class="text-end w-80">{{ number_format($stat->deal_limit, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-success px-2 py-1 mb-0 rounded-0">받치기롤링금</span></td>
-                <td class="text-end w-80">{{ number_format($stat->deal_share,0)}}</td>
+                <td class="text-end w-80">{{ number_format($stat->deal_share, 2)}}</td>
             </tr>
         </tbody>
     </table>

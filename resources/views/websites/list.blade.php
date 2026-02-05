@@ -81,13 +81,13 @@
     });
     function toggle(id){
         var sats = 0;
-        if(document.getElementById('switchChange' + id).innerHTML == {!! __('agent.GameDisable')!!}){
-            document.getElementById('switchChange' + id).innerHTML = {!! __('agent.GameEnable')!!};
+        if(document.getElementById('switchChange' + id).innerHTML == "{!! __('agent.GameDisable')!!}"){
+            document.getElementById('switchChange' + id).innerHTML = "{!! __('agent.GameEnable')!!}";
             document.getElementById('switchChange' + id).classList.add('text-primary');
             document.getElementById('switchChange' + id).classList.remove('text-danger');
             stats = 1;
         }else{
-            document.getElementById('switchChange' + id).innerHTML = {!! __('agent.GameDisable')!!};
+            document.getElementById('switchChange' + id).innerHTML = "{!! __('agent.GameDisable')!!}";
             document.getElementById('switchChange' + id).classList.add('text-danger');
             document.getElementById('switchChange' + id).classList.remove('text-primary');
             stats = 0;
@@ -126,10 +126,10 @@
         });
         var alldata = user_ids;
         if(user_ids.length == 0){
-            alert({!! __('agent.DomainMsg1')!!});
+            alert("{!! __('agent.DomainMsg1')!!}");
             return;
         }
-        if(confirm({!! __('agent.DomainMsg2')!!})){            
+        if(confirm("{!! __('agent.DomainMsg2')!!}")){            
             $("#btn_delete").css('pointer-events', 'none');
             $.ajax({
                 url: "{{ argon_route('websites.delete') }}",

@@ -17,10 +17,10 @@
 @endif
 @if($stat->type == 'add')
 <td><span class="text-success">{{__('agent.Deposit')}}</td>
-<td><span class="text-success">{{number_format($stat->sum,0)}}</span></td>
+<td><span class="text-success">{{number_format($stat->sum,2)}}</span></td>
 @else
 <td><span class="text-danger">{{__('agent.Withdraw')}}</td>
-<td><span class="text-danger">{{number_format($stat->sum,0)}}</span></td>
+<td><span class="text-danger">{{number_format($stat->sum,2)}}</span></td>
 @endif
 @if ($stat->transaction)
 <td>
@@ -28,11 +28,11 @@
         <tbody>
             <tr>
                 <td class="text-start"><span  class="btn btn-primary px-2 py-1 mb-1 rounded-0">{{__('OldBalance')}}</span></td>
-                <td class="text-end w-70">{{number_format($stat->transaction->old,0)}}</td>
+                <td class="text-end w-70">{{number_format($stat->transaction->old,2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-danger px-2 py-1 mb-1 rounded-0">{{__('NewBalance')}}</span></td>
-                <td class="text-end w-70">{{number_format($stat->transaction->new,0)}}</td>
+                <td class="text-end w-70">{{number_format($stat->transaction->new,2)}}</td>
             </tr>
         </tbody>
     </table>
@@ -82,15 +82,15 @@
         <tbody>
             <tr>
                 <td class="text-start"><span  class="btn btn-primary px-2 py-1 mb-1 rounded-0">{{__('agent.Deposit')}}</span></td>
-                <td class="text-end w-70">{{number_format($stat->user->total_in)}}</td>
+                <td class="text-end w-70">{{number_format($stat->user->total_in, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-danger px-2 py-1 mb-1 rounded-0">{{__('agent.Withdraw')}}</span></td>
-                <td class="text-end w-70">{{number_format($stat->user->total_out)}}</td>
+                <td class="text-end w-70">{{number_format($stat->user->total_out, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-success px-2 py-1 mb-0 rounded-0">{{__('agent.Profit')}}</span></td>
-                <td class="text-end w-70">{{number_format($stat->user->total_in - $stat->user->total_out)}}</td>
+                <td class="text-end w-70">{{number_format($stat->user->total_in - $stat->user->total_out, 2)}}</td>
             </tr>
         </tbody>
     </table>

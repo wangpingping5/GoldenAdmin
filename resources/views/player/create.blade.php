@@ -126,17 +126,17 @@ $('#btncheckId').click(function () {
             success: function (data) {
                 if (data.error)
                 {
-                    alert({!!__('agent.MultiUserMsg7')!!});
+                    alert("{!!__('agent.MultiUserMsg7')!!}");
                 }
                 else
                 {
                     if (data.ok == 1)
                     {
-                        alert({!!__('agent.MultiUserMsg8')!!});
+                        alert("{!!__('agent.MultiUserMsg8')!!}");
                     }
                     else
                     {
-                        alert({!!__('agent.MultiUserMsg9')!!});
+                        alert("{!!__('agent.MultiUserMsg9')!!}");
                     }
                 }
             },

@@ -15,11 +15,11 @@
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">{{__('TodayTotalDeposit')}}</p>
                                         <h5 class="font-weight-bolder text-success">
-                                        {{number_format($stats['todayin'])}}
+                                        {{number_format($stats['todayin'], 2)}}
                                         </h5>
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">{{__('TodayTotalWithdraw')}}</p>
                                         <h5 class="font-weight-bolder text-danger">
-                                        {{number_format($stats['todayout'])}}
+                                        {{number_format($stats['todayout'], 2)}}
                                         </h5>
                                     </div>
                                 </div>
@@ -39,7 +39,7 @@
                             <div class="row">
                                 <div class="col-12 mt-2 mb-0">
                                     <div class="numbers">
-                                        <p class="text-sm text-uppercase mb-0 font-weight-bold">{{__('TodayTotalDW')}} : <span class="h5 text-danger">{{number_format($stats['todaydw'])}}</span></p>
+                                        <p class="text-sm text-uppercase mb-0 font-weight-bold">{{__('TodayTotalDW')}} : <span class="h5 text-danger">{{number_format($stats['todaydw'], 2)}}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -54,11 +54,11 @@
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">{{__('TodayTotalBet')}}</p>
                                         <h5 class="font-weight-bolder text-success">
-                                        {{number_format($todaysummary?$todaysummary->totalbet:0)}}
+                                        {{number_format($todaysummary?$todaysummary->totalbet:0, 2)}}
                                         </h5>
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">{{__('TodayTotalWin')}}</p>
                                         <h5 class="font-weight-bolder text-danger">
-                                        {{number_format($todaysummary?$todaysummary->totalwin:0)}}
+                                        {{number_format($todaysummary?$todaysummary->totalwin:0, 2)}}
                                         </h5>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
                             <div class="row">
                                 <div class="col-12 mt-2 mb-0">
                                     <div class="numbers">
-                                        <p class="text-sm text-uppercase mb-0 font-weight-bold">{{__('TodayTotalBetWin')}} : <span class="h5 text-danger">{{number_format($stats['todaybetwin'])}}</span></p>
+                                        <p class="text-sm text-uppercase mb-0 font-weight-bold">{{__('TodayTotalBetWin')}} : <span class="h5 text-danger">{{number_format($stats['todaybetwin'], 2)}}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -93,11 +93,11 @@
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">{{__('MonthlyTotalDeposit')}}</p>
                                         <h5 class="font-weight-bolder text-success">
-                                        {{number_format($stats['monthin'])}}
+                                        {{number_format($stats['monthin'], 2)}}
                                         </h5>
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">{{__('MonthlyTotalWithdraw')}}</p>
                                         <h5 class="font-weight-bolder text-danger">
-                                        {{number_format($stats['monthout'])}}
+                                        {{number_format($stats['monthout'], 2)}}
                                         </h5>
                                     </div>
                                 </div>
@@ -117,7 +117,7 @@
                             <div class="row">
                                 <div class="col-12 mt-2 mb-0">
                                     <div class="numbers">
-                                        <p class="text-sm text-uppercase mb-0 font-weight-bold">{{__('MonthlyTotalDW')}} : <span class="h5 text-danger">{{number_format($stats['monthin'] - $stats['monthout'])}}</span></p>
+                                        <p class="text-sm text-uppercase mb-0 font-weight-bold">{{__('MonthlyTotalDW')}} : <span class="h5 text-danger">{{number_format($stats['monthin'] - $stats['monthout'], 2)}}</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -132,11 +132,11 @@
                                     <div class="numbers">
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">{{__('MonthlyTotalBet')}}</p>
                                         <h5 class="font-weight-bolder text-success">
-                                        {{number_format($stats['monthbet'])}}
+                                        {{number_format($stats['monthbet'], 2)}}
                                         </h5>
                                         <p class="text-sm mb-0 text-uppercase font-weight-bold">{{__('MonthlyTotalWin')}}</p>
                                         <h5 class="font-weight-bolder text-danger">
-                                        {{number_format($stats['monthwin'])}}
+                                        {{number_format($stats['monthwin'], 2)}}
                                         </h5>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                             <div class="row">
                                 <div class="col-12 mt-2 mb-0">
                                     <div class="numbers">
-                                        <p class="text-sm text-uppercase mb-0 font-weight-bold">{{__('MonthlyTotalBetWin')}} : <span class="h5 text-danger">{{number_format($stats['monthbet'] - $stats['monthwin'])}}</span></p>
+                                        <p class="text-sm text-uppercase mb-0 font-weight-bold">{{__('MonthlyTotalBetWin')}} : <span class="h5 text-danger">{{number_format($stats['monthbet'] - $stats['monthwin'], 2)}}</span></p>
                                     </div>
                                 </div>
                             </div>

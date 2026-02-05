@@ -24,10 +24,10 @@
                 @endfor
                 </p>
                 @endif
-                <p class="mb-0 text-dark font-weight-bold">{{__('agent.RegisterDate')}} : <span class="text-info">{{date('Y-m-d H:i', strtotime($user->created_at))}}</span>@if (!$user->hasRole('user')) / {{__('agent.ChildUserCount')}} : <span class="text-success">{{count($user->hierarchyUsersOnly())}}</span> / {{__('agent.ChildTotalBalance')}} : <span class="text-warning">{{number_format($user->childBalanceSum())}}</span> @endif</p>
-                <p class="mb-0 text-dark font-weight-bold">{{__('agent.TotalDeposit')}} : <span class="text-primary">{{number_format($user->total_in)}}</span> / {{__('agent.TotalWithdraw')}} : <span class="text-primary">{{number_format($user->total_out)}}</span> / {{__('agent.TotalDW')}} : <span class="text-primary">{{number_format($user->total_in - $user->total_out)}}</span></p>
+                <p class="mb-0 text-dark font-weight-bold">{{__('agent.RegisterDate')}} : <span class="text-info">{{date('Y-m-d H:i', strtotime($user->created_at))}}</span>@if (!$user->hasRole('user')) / {{__('agent.ChildUserCount')}} : <span class="text-success">{{count($user->hierarchyUsersOnly())}}</span> / {{__('agent.ChildTotalBalance')}} : <span class="text-warning">{{number_format($user->childBalanceSum(), 2)}}</span> @endif</p>
+                <p class="mb-0 text-dark font-weight-bold">{{__('agent.TotalDeposit')}} : <span class="text-primary">{{number_format($user->total_in, 2)}}</span> / {{__('agent.TotalWithdraw')}} : <span class="text-primary">{{number_format($user->total_out, 2)}}</span> / {{__('agent.TotalDW')}} : <span class="text-primary">{{number_format($user->total_in - $user->total_out, 2)}}</span></p>
                 @if ($user->hasRole('user'))
-                <p class="mb-0 text-dark font-weight-bold">{{__('agent.Last30days')}} {{__('agent.BetAmount')}} : <span class="text-success">{{number_format($totalstatic->totalbet)}}</span> / {{__('agent.WinAmount')}} : <span class="text-danger">{{number_format($totalstatic->totalwin)}}</span></p>
+                <p class="mb-0 text-dark font-weight-bold">{{__('agent.Last30days')}} {{__('agent.BetAmount')}} : <span class="text-success">{{number_format($totalstatic->totalbet, 2)}}</span> / {{__('agent.WinAmount')}} : <span class="text-danger">{{number_format($totalstatic->totalwin, 2)}}</span></p>
                 @endif
             </div>
         </div>
@@ -116,7 +116,7 @@
                                                 <label class="form-control-label" id="balance">{{__("agent.Balance")}}</label>
                                             </div>
                                             <div class="col-md-4 col-lg-4 col-6 mb-3">
-                                                <input type="text" name="balance" id="balance" class="form-control" aria-describedby="balance" value="{{$user->hasRole('manager') ? number_format($user->shop->balance) : number_format($user->balance)}}" disabled>
+                                                <input type="text" name="balance" id="balance" class="form-control" aria-describedby="balance" value="{{$user->hasRole('manager') ? number_format($user->shop->balance, 2) : number_format($user->balance, 2)}}" disabled>
                                             </div>
                                             @if ($user->isInoutPartner())
                                             <div class="col-md-2 col-lg-2 col-6 mb-3">
@@ -447,7 +447,7 @@
                                         <tbody class="list">
                                             @foreach($transactions as $stat)
                                                 <tr>
-                                                    <td>{{number_format($stat->summ,0)}}</td>
+                                                    <td>{{number_format($stat->summ, 2)}}</td>
                                                     <td>
                                                     @if ($stat->user)
                                                         <a href="#" data-toggle="tooltip" data-original-title="{{$stat->user->parents(auth()->user()->role_id)}}">

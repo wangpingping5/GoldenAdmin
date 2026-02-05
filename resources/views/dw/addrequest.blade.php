@@ -30,9 +30,9 @@
                                                 <td>{{__('agent.Balance')}}</td>
                                                 <td>
                                                     @if (auth()->user()->hasRole('manager'))
-                                                        {{number_format(auth()->user()->shop->balance)}}
+                                                        {{number_format(auth()->user()->shop->balance, 2)}}
                                                     @else
-                                                        {{number_format(auth()->user()->balance)}}
+                                                        {{number_format(auth()->user()->balance, 2)}}
                                                     @endif
                                                 </td>
                                             </tr>
@@ -181,7 +181,7 @@
     function deposit_balance() {
         if (!depositAccountRequested)
         {
-            show_alarm({!!__('PleaseConfirmDepositAccount')!!});
+            show_alarm("{!!__('PleaseConfirmDepositAccount')!!}");
             return;
         }
         $("#doSubmit").attr('disabled', 'disabled');
@@ -210,7 +210,7 @@
                     }
                     return;
                 }
-                show_alarm({!!__('DepositRequestFinish')!!}, function() { location.reload(true);});
+                show_alarm("{!!__('DepositRequestFinish')!!}", function() { location.reload(true);});
             },
             error: function (err, xhr) {
                 show_alarm(err.responseText);

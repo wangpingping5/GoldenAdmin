@@ -91,11 +91,11 @@
         var checked = $("#chkview" + cat_id).is(':checked');
         var view = 0;
         if(checked == true){
-            $("#spview" + cat_id).text({!!__('agent.GameActive')!!});
+            $("#spview" + cat_id).text("{!!__('agent.GameActive')!!}");
             $("#spview" + cat_id).attr('class', 'text-green');
             view = 1;
         }else{
-            $("#spview" + cat_id).text({!!__('agent.GameInactive')!!});
+            $("#spview" + cat_id).text("{!!__('agent.GameInactive')!!}");
             $("#spview" + cat_id).attr('class', 'text-danger');
         }
         $.ajax({
@@ -110,11 +110,11 @@
                     alert(data.msg);
                     if(checked == true){
                         $("#chkview" + cat_id).prop('checked', false);
-                        $("#spview" + cat_id).text({!!__('agent.GameInactive')!!});
+                        $("#spview" + cat_id).text("{!!__('agent.GameInactive')!!}");
                         $("#spview" + cat_id).attr('class', 'text-danger');
                     }else{
                         $("#chkview" + cat_id).prop('checked', true);
-                        $("#spview" + cat_id).text({!!__('agent.GameActive')!!});
+                        $("#spview" + cat_id).text("{!!__('agent.GameActive')!!}");
                         $("#spview" + cat_id).attr('class', 'text-green');
                     }
                 }
@@ -134,11 +134,11 @@
         var checked = $("#chkstatus" + cat_id).is(':checked');
         var status = 0;
         if(checked == true){
-            $("#spstatus" + cat_id).text({!!__('agent.GameEnable')!!});
+            $("#spstatus" + cat_id).text("{!!__('agent.GameEnable')!!}");
             $("#spstatus" + cat_id).attr('class', 'text-green');
             status = 1;
         }else{
-            $("#spstatus" + cat_id).text({!!__('agent.GameDisable')!!});
+            $("#spstatus" + cat_id).text("{!!__('agent.GameDisable')!!}");
             $("#spstatus" + cat_id).attr('class', 'text-danger');
         }
         $.ajax({
@@ -153,11 +153,11 @@
                     alert(data.msg);
                     if(checked == true){
                         $("#chkstatus" + cat_id).prop('checked', false);
-                        $("#spstatus" + cat_id).text({!!__('agent.GameEnable')!!});
+                        $("#spstatus" + cat_id).text("{!!__('agent.GameEnable')!!}");
                         $("#spstatus" + cat_id).attr('class', 'text-danger');
                     }else{
                         $("#chkstatus" + cat_id).prop('checked', true);
-                        $("#spstatus" + cat_id).text({!!__('agent.GameDisable')!!});
+                        $("#spstatus" + cat_id).text("{!!__('agent.GameDisable')!!}");
                         $("#spstatus" + cat_id).attr('class', 'text-green');
                     }
                 }

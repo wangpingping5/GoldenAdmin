@@ -7,7 +7,7 @@
     <div class="row mb-4">
         <div class="col-lg-12">
             <div class="card p-4 text-center">
-                <p class="mb-0 text-dark font-weight-bold">{{__('agent.TotalRequestingAmount')}}: <span class="text-success">{{number_format($total['add'])}}</span>{{\App\Models\User::USER_CURRENCY_SYMBOLS[auth()->user()->currency ?? 'USD']}}&nbsp;&nbsp;&nbsp;{{__('agent.TotalWatingAmount')}}:<span class="text-warning">{{number_format($total['out'])}}</span>{{\App\Models\User::USER_CURRENCY_SYMBOLS[auth()->user()->currency ?? 'USD']}}</p>                 
+                <p class="mb-0 text-dark font-weight-bold">{{__('agent.TotalRequestingAmount')}}: <span class="text-success">{{number_format($total['add'], 2)}}</span>{{\App\Models\User::USER_CURRENCY_SYMBOLS[auth()->user()->currency ?? 'USD']}}&nbsp;&nbsp;&nbsp;{{__('agent.TotalWatingAmount')}}:<span class="text-warning">{{number_format($total['out'], 2)}}</span>{{\App\Models\User::USER_CURRENCY_SYMBOLS[auth()->user()->currency ?? 'USD']}}</p>                 
             </div>
         </div>
     </div>
@@ -125,9 +125,9 @@
     function dwProcess(id, type)
     {
         if(type == 'add'){
-            var message = {!!__('agent.DepositAllow')!!};
+            var message = "{!!__('agent.DepositAllow')!!}";
         }else{
-            var message = {!!__('agent.WithdrawAllow')!!};
+            var message = "{!!__('agent.WithdrawAllow')!!}";
         }
         if(confirm(message)){
             $("#process"+id).css('pointer-events', 'none');
@@ -165,11 +165,11 @@
             stat_ids.push(td.eq(1).text());
         });
         if(stat_ids.length == 0){
-            alert({!!__('agent.NoSelectedRecord')!!});
+            alert("{!!__('agent.NoSelectedRecord')!!}");
             $("#btn_wait").css('pointer-events', 'auto');
             return;
         }
-        if(confirm({!!__('agent.ConvertWaitSelectedRecords')!!})){
+        if(confirm("{!!__('agent.ConvertWaitSelectedRecords')!!}")){
             $.ajax({
                 url: "{{argon_route('common.wait_in_out')}}",
                 type: "GET",

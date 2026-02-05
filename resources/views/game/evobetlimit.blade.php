@@ -47,7 +47,7 @@
                                                     @endif
                                                 </td>
                                                 <td>{{$betskin->skin}}</td>
-                                                <td>{{number_format($betskin->min,0)}} - {{number_format($betskin->max,0)}}</td>
+                                                <td>{{number_format($betskin->min, 2)}} - {{number_format($betskin->max, 2)}}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>

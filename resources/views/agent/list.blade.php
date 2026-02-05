@@ -11,7 +11,7 @@
     <div class="row mb-4">
         <div class="col-lg-12">
             <div class="card p-4 text-center">
-                <p class="mb-0 text-dark font-weight-bold">{{__('agent.TotalAgentCounts')}}: <span class="text-danger">{{number_format($total['count'])}}</span>&nbsp;&nbsp;&nbsp;{{__('agent.Balance')}}:<span class="text-info">{{number_format($total['balance'])}}</span> {{\App\Models\User::USER_CURRENCY_SYMBOLS[auth()->user()->currency ?? 'USD']}}</p>                 
+                <p class="mb-0 text-dark font-weight-bold">{{__('agent.TotalAgentCounts')}}: <span class="text-danger">{{number_format($total['count'], 2)}}</span>&nbsp;&nbsp;&nbsp;{{__('agent.Balance')}}:<span class="text-info">{{number_format($total['balance'], 2)}}</span> {{\App\Models\User::USER_CURRENCY_SYMBOLS[auth()->user()->currency ?? 'USD']}}</p>                 
             </div>
         </div>
     </div>

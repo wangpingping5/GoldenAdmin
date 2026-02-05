@@ -31,45 +31,14 @@ namespace App\Models
                 }
                 if( $model->type == 'add' || $model->type == '' ) 
                 {
-                    $sum = '<span class="text-green">' . number_format(abs($model->summ), 0, '.', '') . '</span>';
+                    $sum = '<span class="text-green">' . number_format(abs($model->summ), 2, '.', '') . '</span>';
                 }
                 else
                 {
-                    $sum = '<span class="text-red">' . number_format(abs($model->summ), 0, '.', '') . '</span>';
+                    $sum = '<span class="text-red">' . number_format(abs($model->summ), 2, '.', '') . '</span>';
                 }
                 $usdata = '<a href="' . argon_route('statistics', ['user' => $model->user->username]) . '">' . $model->user->username . '</a>';
-                /*try
-                {
-                    \Illuminate\Support\Facades\Redis::publish('Lives', json_encode([
-                        'event' => 'NewLive', 
-                        'data' => [
-                            'type' => 'PayStat', 
-                            'Name' => '', 
-                            'Old' => number_format($model->old,0), 
-                            'New' => number_format($model->new,0), 
-                            'Game' => '', 
-                            'User' => $usdata, 
-                            'System' => $sysdata, 
-                            'Sum' => $sum, 
-                            'In' => ($model->type == 'add' ? number_format($model->summ,0) : ''), 
-                            'Out' => ($model->type != 'add' ? number_format($model->summ,0) : ''), 
-                            'Balance' => '', 
-                            'Bet' => '', 
-                            'Win' => '', 
-                            'IN_GAME' => '', 
-                            'IN_JPS' => '', 
-                            'IN_JPG' => '', 
-                            'Profit' => '', 
-                            'user_id' => \Auth::id(), 
-                            'shop_id' => $model->shop_id, 
-                            'Date' => $model->created_at->format(config('app.date_time_format')), 
-                            'domain' => request()->getHost()
-                        ]
-                    ]));
-                }
-                catch( \Predis\Connection\ConnectionException $e ) 
-                {
-                }*/
+                
             });
         }
         public function admin()

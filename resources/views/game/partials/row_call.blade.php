@@ -16,9 +16,9 @@
 		삭제된 회원
 		@endif
 	</td>
-	<td>{{ number_format($happyhour->total_bank,0) }}</td>
-	<td>{{ number_format($happyhour->current_bank,0) }}</td>
-	<td>{{ number_format($happyhour->over_bank,0) }}</td>
+	<td>{{ number_format($happyhour->total_bank, 2) }}</td>
+	<td>{{ number_format($happyhour->current_bank, 2) }}</td>
+	<td>{{ number_format($happyhour->over_bank, 2) }}</td>
 	<!-- <td>{{ ['없음','메이저','그랜드'][$happyhour->jackpot] }}</td> -->
 	<td>{{ $happyhour->created_at }}</td>
 	<td>

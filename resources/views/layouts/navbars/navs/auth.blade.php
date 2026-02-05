@@ -28,21 +28,21 @@
                   <li class="nav-item d-none d-lg-block ml-lg-4">
                       <div class="nav-item-btn align-items-center">
                         <a class="nav-link text-light font-weight-bold" href="{{argon_route('player.list')}}">
-                            {{__(NewJoin)}} : <span id="join_newmark" class="badge bg-primary">(0)</span>
+                            {{ __('NewJoin')}} : <span id="join_newmark" class="badge bg-primary">(0)</span>
                         </a>
                       </div>
                   </li>
                   <li class="nav-item d-none d-lg-block ml-lg-4">
                       <div class="nav-item-btn align-items-center">
                       <a class="nav-link text-light font-weight-bold" href="{{argon_route('ec.manage', ['type'=>'add'])}}">
-                            {{__('Charge Request')}} : <span id="in_newmark" class="badge bg-success">(0)</span>
+                            {{ __('Charge Request')}} : <span id="in_newmark" class="badge bg-success">(0)</span>
                       </a>
                       </div>
                   </li>
                   <li class="nav-item d-none d-lg-block ml-lg-4">
                       <div class="nav-item-btn align-items-center">
                         <a class="nav-link text-light font-weight-bold" href="{{argon_route('ec.manage', ['type'=>'out'])}}">
-                            {{__('Charge Request')}} : <span id="out_newmark" class="badge bg-warning">(0)</span>
+                            {{ __('Exchange Request')}} : <span id="out_newmark" class="badge bg-danger">(0)</span>
                         </a>
                       </div>
                   </li>
@@ -91,9 +91,9 @@
                       {{__('Balance')}} : 
                       <span class="badge badge-pill badge-md bg-gradient-success">
                       @if (auth()->user()->hasRole('manager'))
-                          {{number_format(auth()->user()->shop->balance)}}
+                          {{number_format(auth()->user()->shop->balance, 2)}}
                       @else
-                          {{number_format(auth()->user()->balance)}}
+                          {{number_format(auth()->user()->balance, 2)}}
                       @endif
                       </span>
                   </a>
@@ -101,13 +101,13 @@
               @if (auth()->user()->role_id > 3)
               <li class="nav-item d-none d-lg-block ml-lg-4">
                   <a class="nav-link text-light font-weight-bold" href="#">
-                      {{__('Agent Balance')}} : <span class="badge badge-pill badge-md bg-gradient-info">{{number_format(auth()->user()->childPartnerBalanceSum())}}</span>
+                      {{__('Agent Balance')}} : <span class="badge badge-pill badge-md bg-gradient-info">{{number_format(auth()->user()->childPartnerBalanceSum(), 2)}}</span>
                   </a>
               </li>
               @endif
               <li class="nav-item d-none d-lg-block ml-lg-4">
                   <a class="nav-link text-light font-weight-bold" href="#">
-                      {{__('User Balance')}} :  <span class="badge badge-pill badge-md bg-gradient-info">{{number_format(auth()->user()->childBalanceSum() - auth()->user()->childPartnerBalanceSum())}}</span>
+                      {{__('User Balance')}} :  <span class="badge badge-pill badge-md bg-gradient-info">{{number_format(auth()->user()->childBalanceSum() - auth()->user()->childPartnerBalanceSum(), 2)}}</span>
                   </a>
               </li>
               <li class="nav-item d-none d-lg-block ml-lg-4">
@@ -115,11 +115,11 @@
                       {{__('Rolling')}} : 
                       <span class="badge badge-pill badge-md bg-gradient-danger">
                       @if (auth()->user()->isInoutPartner())
-                      {{ number_format(auth()->user()->childDealSum(), 0) }}
+                      {{ number_format(auth()->user()->childDealSum(), 2) }}
                       @elseif (auth()->user()->hasRole('manager'))
-                      {{ number_format(auth()->user()->shop->deal_balance - auth()->user()->shop->mileage,0) }}
+                      {{ number_format(auth()->user()->shop->deal_balance - auth()->user()->shop->mileage, 2) }}
                       @else
-                      {{ number_format(auth()->user()->deal_balance - auth()->user()->mileage,0) }}
+                      {{ number_format(auth()->user()->deal_balance - auth()->user()->mileage, 2) }}
                       @endif
                       </span>
                   </a>

@@ -61,32 +61,32 @@ $badge_class = \App\Models\User::badgeclass();
                     @if ($stat->category && $stat->category->href == 'habaneroplay')
                         -1
                     @else
-                        <td class="text-end w-80">{{number_format($stat->balance, 0)}}</td>
+                        <td class="text-end w-80">{{number_format($stat->balance, 2)}}</td>
                     @endif
                 </tr>
                 @if($stat->bet_type == 'betwin')
                     <tr>
                         <td class="text-start"><span class="btn btn-danger px-2 py-1 mb-1 rounded-0">{{__('agent.BetAmount')}}</span></td>
-                        <td class="text-end w-80">{{number_format($stat->bet, 0)}}</td>
+                        <td class="text-end w-80">{{number_format($stat->bet, 2)}}</td>
                     </tr>
                     <tr>
                         <td class="text-start"><span class="btn btn-success px-2 py-1 mb-0 rounded-0">{{__('agent.WinAmount')}}</span></td>
-                        <td class="text-end w-80">{{number_format($stat->win, 0)}}</td>
+                        <td class="text-end w-80">{{number_format($stat->win, 2)}}</td>
                     </tr>
                 @elseif($stat->bet_type == 'bet')
                     <tr>
                         <td class="text-start"><span class="btn btn-danger px-2 py-1 mb-1 rounded-0">{{__('agent.BetAmount')}}</span></td>
-                        <td class="text-end w-80">{{number_format($stat->bet, 0)}}</td>
+                        <td class="text-end w-80">{{number_format($stat->bet, 2)}}</td>
                     </tr>
                 @elseif($stat->bet_type == 'cancel')
                     <tr>
                         <td class="text-start"><span class="btn btn-dark px-2 py-1 mb-1 rounded-0">{{__('agent.BetCancel')}}</span></td>
-                        <td class="text-end w-80">{{number_format($stat->win, 0)}}</td>
+                        <td class="text-end w-80">{{number_format($stat->win, 2)}}</td>
                     </tr>
                 @else
                     <tr>
                         <td class="text-start"><span class="btn btn-success px-2 py-1 mb-0 rounded-0">{{__('agent.WinAmount')}}</span></td>
-                        <td class="text-end w-80">{{number_format($stat->win, 0)}}</td>
+                        <td class="text-end w-80">{{number_format($stat->win, 2)}}</td>
                     </tr>
                 @endif
             </tbody>

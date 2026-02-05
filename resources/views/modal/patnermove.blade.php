@@ -107,7 +107,7 @@
                     }
                 },
                 error: function (data) {
-                    alert({!! __('agent.NoCorrectData')!!});
+                    alert("{!! __('agent.NoCorrectData')!!}");
                     $('#btnSubmit').css('pointer-events', 'auto');
                 }
             });

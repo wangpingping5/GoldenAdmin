@@ -120,10 +120,10 @@
         });
         var alldata = user_ids;
         if(user_ids.length == 0){
-            alert({!!__('agent.NoticeMsg1')!!});
+            alert("{!!__('agent.NoticeMsg1')!!}");
             return;
         }
-        if(confirm({!!__('agent.NoticeMsg2')!!})){            
+        if(confirm("{!!__('agent.NoticeMsg2')!!}")){            
             $("#btn_delete").css('pointer-events', 'none');
             $.ajax({
                 url: "{{ argon_route('notices.delete') }}",
@@ -158,14 +158,14 @@
         });
         var alldata = user_ids;
         if(user_ids.length == 0){
-            alert({!!__('agent.NoticeMsg1')!!});
+            alert("{!!__('agent.NoticeMsg1')!!}");
             return;
         }
 		var poptext = '';
 		if(id==1){
-			poptext = {!!__('agent.NoticeMsg3')!!};
+			poptext = "{!!__('agent.NoticeMsg3')!!}";
 		}else{
-			poptext = {!!__('agent.NoticeMsg4')!!};
+			poptext = "{!!__('agent.NoticeMsg4')!!}";
 		}
 		if(confirm(poptext)){            
             $("#btn_active").css('pointer-events', 'none');

@@ -30,9 +30,9 @@
                                                 <td>{{__('agent.Balance')}}</td>
                                                 <td>
                                                     @if ($user->hasRole('manager'))
-                                                        {{number_format($user->shop->balance)}}
+                                                        {{number_format($user->shop->balance, 2)}}
                                                     @else
-                                                        {{number_format($user->balance)}}
+                                                        {{number_format($user->balance, 2)}}
                                                     @endif
                                                 </td>
                                             </tr>
@@ -40,9 +40,9 @@
                                                 <td>{{__('agent.Rolling')}}</td>
                                                 <td>
                                                     @if ($user->hasRole('manager'))
-                                                        {{number_format($user->shop->deal_balance - $user->shop->mileage)}}
+                                                        {{number_format($user->shop->deal_balance - $user->shop->mileage, 2)}}
                                                     @else
-                                                        {{number_format($user->deal_balance - $user->mileage)}}
+                                                        {{number_format($user->deal_balance - $user->mileage, 2)}}
                                                     @endif
                                                 </td>
                                             </tr>
@@ -148,7 +148,7 @@
                     show_alarm(data.msg);
                     return;
                 }
-                show_alarm({!!__('agent.FinishedConvertRolling')!!}, function() { location.reload(true);});
+                show_alarm("{!!__('agent.FinishedConvertRolling')!!}", function() { location.reload(true);});
             },
             error: function (err, xhr) {
                 show_alarm(err.responseText);

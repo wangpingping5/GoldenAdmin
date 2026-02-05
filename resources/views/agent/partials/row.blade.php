@@ -70,11 +70,11 @@
         <tbody>
             <tr>
                 <td class="text-start"><a href="javascript:;" class="btn btn-primary px-2 py-1 mb-1 rounded-0" id="rfs_{{$user->id}}">{{__("agent.Balance")}}</a></td>
-                <td class="text-end w-70" id="uid_{{$user->id}}">{{$user->hasRole('manager') ? number_format($user->shop->balance) : number_format($user->balance)}}</td>
+                <td class="text-end w-70" id="uid_{{$user->id}}">{{$user->hasRole('manager') ? number_format($user->shop->balance, 2) : number_format($user->balance, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><a href="javascript:;"  class="btn btn-danger px-2 py-1 m-0 rounded-0"  id="drfs_{{$user->id}}">{{__("agent.Rolling")}}</a></td>
-                <td class="text-end w-70" id="duid_{{$user->id}}">{{ $user->hasRole('manager') ? number_format($user->shop->deal_balance - $user->shop->mileage,0) : number_format($user->deal_balance - $user->mileage,0)}}</td>
+                <td class="text-end w-70" id="duid_{{$user->id}}">{{ $user->hasRole('manager') ? number_format($user->shop->deal_balance - $user->shop->mileage, 2) : number_format($user->deal_balance - $user->mileage, 2)}}</td>
             </tr>
         </tbody>
     </table>
@@ -84,15 +84,15 @@
         <tbody>
             <tr>
                 <td class="text-start"><span  class="btn btn-primary px-2 py-1 mb-1 rounded-0">{{__('Deposit')}}</span></td>
-                <td class="text-end w-70">{{number_format($user->total_in)}}</td>
+                <td class="text-end w-70">{{number_format($user->total_in, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-danger px-2 py-1 mb-1 rounded-0">{{__('Withdraw')}}</span></td>
-                <td class="text-end w-70">{{number_format($user->total_out)}}</td>
+                <td class="text-end w-70">{{number_format($user->total_out, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-success px-2 py-1 mb-0 rounded-0">{{__('Profit')}}</span></td>
-                <td class="text-end w-70">{{number_format($user->total_in - $user->total_out)}}</td>
+                <td class="text-end w-70">{{number_format($user->total_in - $user->total_out, 2)}}</td>
             </tr>
         </tbody>
     </table>

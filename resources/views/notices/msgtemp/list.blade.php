@@ -90,10 +90,10 @@
         });
         var alldata = user_ids;
         if(user_ids.length == 0){
-            alert({!!__('agent.NoticeMsg5')!!});
+            alert("{!!__('agent.NoticeMsg5')!!}");
             return;
         }
-        if(confirm({!!__('agent.NoticeMsg6')!!})){            
+        if(confirm("{!!__('agent.NoticeMsg6')!!}")){            
             $("#btn_delete").css('pointer-events', 'none');
             $.ajax({
                 url: "{{ argon_route('msgtemp.delete') }}",

@@ -64,7 +64,7 @@
     </table>
 </td>
 <!-- 롤링전환 -->
-<td >{{number_format($adjustment->dealout,0)}}</td>
+<td >{{number_format($adjustment->dealout, 2)}}</td>
 
 <!-- 보유금 -->
 <td>
@@ -72,19 +72,19 @@
         <tbody>
             <tr>
                 <td class="text-start"><span  class="btn btn-primary px-2 py-1 mb-1 rounded-0">{{__('agent.All')}}</span></td>
-                <td class="text-end w-90">{{ number_format($adjustment->balance+$adjustment->childsum,0)}}</td>
+                <td class="text-end w-90">{{ number_format($adjustment->balance+$adjustment->childsum, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-warning px-2 py-1 mb-1 rounded-0">{{__('agent.Self')}}</span></td>
-                <td class="text-end w-90">{{ number_format($adjustment->balance,0)}}</td>
+                <td class="text-end w-90">{{ number_format($adjustment->balance, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-success px-2 py-1 mb-1 rounded-0">{{__('Players')}}</span></td>
-                <td class="text-end w-90">{{ number_format($adjustment->user_sum,0)}}</td>
+                <td class="text-end w-90">{{ number_format($adjustment->user_sum, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-success px-2 py-1 mb-1 rounded-0">{{__('agent.Childs')}}</span></td>
-                <td class="text-end w-90">{{ number_format($adjustment->partner_sum,0)}}</td>
+                <td class="text-end w-90">{{ number_format($adjustment->partner_sum, 2)}}</td>
             </tr>
         </tbody>
     </table>

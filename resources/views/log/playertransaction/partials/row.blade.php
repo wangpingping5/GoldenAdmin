@@ -22,18 +22,18 @@
 </td>
 <td class="text-center">
     @if ($stat->admin && auth()->user()->role_id >= $stat->admin->role_id)
-        {{number_format($stat->balance,0)}}
+        {{number_format($stat->balance, 2)}}
     @else
         0
     @endif
 </td>
-<td class="text-center">{{number_format($stat->old,0)}}</td>
-<td class="text-center">{{number_format($stat->new,0)}}</td>
+<td class="text-center">{{number_format($stat->old, 2)}}</td>
+<td class="text-center">{{number_format($stat->new, 2)}}</td>
 @if($stat->type == 'add')
-<td class="text-center"><span class="text-success">{{number_format($stat->summ,0)}}</span></td>
+<td class="text-center"><span class="text-success">{{number_format($stat->summ, 2)}}</span></td>
 <td class="text-center"><span class="text-success">{{__($stat->type)}}</span></td>
 @else
-<td class="text-center"><span class="text-warning">{{number_format($stat->summ,0)}}</span></td>
+<td class="text-center"><span class="text-warning">{{number_format($stat->summ, 2)}}</span></td>
 <td class="text-center"><span class="text-warning">{{__($stat->type)}}</span></td>
 @endif
 

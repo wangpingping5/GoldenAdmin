@@ -40,11 +40,11 @@
         <tbody>
             <tr>
                 <td class="text-start"><span  class="btn btn-primary px-2 py-1 mb-1 rounded-0">{{__('agent.BetAmount')}}</span></td>
-                <td class="text-end w-80">{{number_format($stat->bet,0)}}</td>
+                <td class="text-end w-80">{{number_format($stat->bet, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-danger px-2 py-1 mb-1 rounded-0">{{__('agent.WinAmount')}}</span></td>
-                <td class="text-end w-80">{{number_format($stat->win,0)}}</td>
+                <td class="text-end w-80">{{number_format($stat->win, 2)}}</td>
             </tr>
             <tr>
                 <td class="text-start"><span  class="btn btn-success px-2 py-1 mb-0 rounded-0">{{__('agent.RollingAmount')}}</span></td>

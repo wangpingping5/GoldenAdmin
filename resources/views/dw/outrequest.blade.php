@@ -30,9 +30,9 @@
                                                 <td>{{__('agent.Balance')}}</td>
                                                 <td>
                                                     @if (auth()->user()->hasRole('manager'))
-                                                        {{number_format(auth()->user()->shop->balance)}}
+                                                        {{number_format(auth()->user()->shop->balance, 2)}}
                                                     @else
-                                                        {{number_format(auth()->user()->balance)}}
+                                                        {{number_format(auth()->user()->balance, 2)}}
                                                     @endif
                                                 </td>
                                             </tr>
@@ -169,7 +169,7 @@
                     show_alarm(data.msg);
                     return;
                 }
-                show_alarm({!!__('agent.WithdrawRequestFinish')!!}, function() { location.reload(true);});
+                show_alarm("{!!__('agent.WithdrawRequestFinish')!!}", function() { location.reload(true);});
             },
             error: function (err, xhr) {
                 show_alarm(err.responseText);

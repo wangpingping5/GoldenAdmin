@@ -18,10 +18,10 @@
                             <tr>
                                 <td>{{$stat->id}}</td>
                                 @if($stat->type == 'add')
-                                <td><span class="text-success">{{number_format($stat->sum,0)}}</span></td>
+                                <td><span class="text-success">{{number_format($stat->sum, 2)}}</span></td>
                                 <td><span class="text-success">{{__('agent.Deposit')}}</span></td>
                                 @else
-                                <td><span class="text-warning">{{number_format($stat->sum,0)}}</span></td>
+                                <td><span class="text-warning">{{number_format($stat->sum, 2)}}</span></td>
                                 <td><span class="text-warning">{{__('agent.Withdraw')}}</span></td>
                                 @endif
                                 <td>{{$stat->bankInfo(!auth()->user()->isInOutPartner())}}</td>

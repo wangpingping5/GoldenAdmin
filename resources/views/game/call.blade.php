@@ -9,9 +9,9 @@
             <div class="card p-4 text-center">
                 <p class="mb-0 text-dark font-weight-bold">
                     <span class="text-primary">{{Request::get('join')[0]??date('Y-m-d 00:00')}} ~ {{Request::get('join')[1]??date('Y-m-d H:i')}}</span>: 까지의</br> 
-                    콜금액 : <span class="text-success">{{number_format($total['totalbank'])}}</span>원&nbsp;
-                    남은콜금액 : <span class="text-info">{{number_format($total['currentbank'])}}</span>원&nbsp;
-                    오버된콜금액 : <span class="text-danger">{{number_format($total['overbank'])}}</span>원
+                    콜금액 : <span class="text-success">{{number_format($total['totalbank'], 2)}}</span>원&nbsp;
+                    남은콜금액 : <span class="text-info">{{number_format($total['currentbank'], 2)}}</span>원&nbsp;
+                    오버된콜금액 : <span class="text-danger">{{number_format($total['overbank'], 2)}}</span>원
                 </p>                 
             </div>
         </div>
