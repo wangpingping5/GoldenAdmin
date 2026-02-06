@@ -55,22 +55,24 @@ namespace App\Http\Controllers\Backend
             }
             $role = \jeremykenedy\LaravelRoles\Models\Role::find($request->role_id);
             $data['parent_id'] = $parent->id;
-
-            $check_deals = [
-                'deal_percent',
-                'table_deal_percent',
-                'ggr_percent',
-                'table_ggr_percent',
-                'pball_single_percent',
-                'pball_comb_percent',
-                'sports_deal_percent',
-                'card_deal_percent'
-            ];
-            foreach ($check_deals as $dealtype)
+            if($parent->role_id < 8)
             {
-                if (isset($data[$dealtype]) && $parent!=null &&  $parent->{$dealtype} < $data[$dealtype])
+                $check_deals = [
+                    'deal_percent',
+                    'table_deal_percent',
+                    'ggr_percent',
+                    'table_ggr_percent',
+                    'pball_single_percent',
+                    'pball_comb_percent',
+                    'sports_deal_percent',
+                    'card_deal_percent'
+                ];
+                foreach ($check_deals as $dealtype)
                 {
-                    return response()->json(['error'=>true, 'msg'=> trans('RollingGGRCannotBiggerThanParent')]);
+                    if (isset($data[$dealtype]) && $parent!=null &&  $parent->{$dealtype} < $data[$dealtype])
+                    {
+                        return response()->json(['error'=>true, 'msg'=> trans('RollingGGRCannotBiggerThanParent')]);
+                    }
                 }
             }
 
